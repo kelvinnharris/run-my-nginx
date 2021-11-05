@@ -1,6 +1,6 @@
 # Kubernetes Service
 
-In this demo, we would like to deploy an image using Kubernetes and configure a service to access your application image.
+In this demo, we would like to deploy an image using Kubernetes and configure a service to access the application image.
 
 ## Steps to reproduce solution
 
