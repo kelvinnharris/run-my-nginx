@@ -45,7 +45,7 @@ $ kubectl expose deployment/my-nginx --port=80 --target-port=80 --type=LoadBalan
 service/my-nginx exposed
 ```
 
-This specification will create a Service which targets TCP port 80 (`target-port`) on any Pod with the `run: my-nginx` label, and expose it on an abstracted Service port (`port`).
+This specification will create a Service which targets TCP port 80 (`target-port`) on any Pod on the specified Deployment, and expose it on an abstracted Service port (`port`).
 
 The Service created and configured can be checked with the following command:
 
@@ -89,23 +89,3 @@ Commercial support is available at
 ## References
 - https://kubernetes.io/docs/concepts/services-networking/connect-applications-service/
 - https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
-
-
-# Task A3
-
-## 1. Apply ingress
-
-`ingress-nginx.yaml` file is configured with ingress rules, where the backend Service and port is configured to the Service created in Task A2.
-
-```
-$ kubectl apply -f ./ingress-nginx.yaml
-ingress.networking.k8s.io/ingress-myservicea created
-```
-
-```
-$ kubectl get ingress
-NAME                 CLASS   HOSTS       ADDRESS   PORTS   AGE
-ingress-myservicea   nginx   localhost             80      55s
-```
-
-## 2. 
